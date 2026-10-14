@@ -1,12 +1,15 @@
-<!DOCTYPE html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101322">
-<meta name="description" content="SKI AI — your personal AI assistant for learning, science, technology, writing and everyday questions.">
+<title>SKI AI — Your Personal AI Assistant</title>
+<meta name="description" content="Meet SKI AI, your personal AI assistant for learning, science, technology, writing, and everyday questions.">
 <meta name="robots" content="index,follow">
+<meta name="theme-color" content="#101322">
 <link rel="canonical" href="https://sibasish2012kar-123.github.io/SKAI/">
-<title>SKI AI — Your Personal AI Assistant</title><style>
+
+<style>
 :root {
   color-scheme: dark;
   --bg: #101322;
@@ -16,74 +19,118 @@
   --muted: #a9b1ca;
   --accent: #9b8cff;
 }
+
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(ellipse at top,#24294b 0%,var(--bg) 55%);
+  background: radial-gradient(ellipse at top, #24294b 0%, var(--bg) 55%);
   color: var(--text);
-  font: 16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, sans-serif;
 }
+
 .wrap {
   max-width: 900px;
   margin: auto;
-  padding: 24px 14px;
+  padding: 28px 16px 24px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 header {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
+
 .logo {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   border-radius: 14px;
-  background: linear-gradient(135deg,#a99aff,#67d8d0);
+  background: linear-gradient(135deg, #a99aff, #67d8d0);
   color: #101322;
   font-weight: 900;
-  font-size: 23px;
+  font-size: 22px;
 }
-h1 { font-size: 22px; margin: 0; }
-.tagline { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
-.intro { text-align: center; margin: 32px 0 24px; }
-.intro h2 { font-size: clamp(28px,5vw,42px); margin: 0 0 10px; line-height: 1.15; }
-.intro p { color: var(--muted); margin: 0; }
+
+h1 { font-size: 21px; margin: 0; }
+
+.tagline {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.intro {
+  text-align: center;
+  margin: 42px 0 28px;
+}
+
+.intro h2 {
+  font-size: clamp(28px, 5vw, 42px);
+  margin: 0 0 10px;
+  line-height: 1.15;
+}
+
+.intro p { margin: 0; color: var(--muted); }
+
 .chat {
   flex: 1;
   border: 1px solid var(--line);
-  background: rgba(25,30,49,.85);
+  background: rgba(25, 30, 49, .8);
   border-radius: 20px;
-  padding: 16px;
-  min-height: 330px;
+  padding: 18px;
+  min-height: 300px;
 }
-#messages { display: flex; flex-direction: column; gap: 14px; }
+
+#messages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .msg {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   padding: 13px 15px;
   border-radius: 15px;
-  max-width: 95%;
+  max-width: 90%;
 }
-.assistant { align-self: flex-start; background: #252b43; border: 1px solid #333b59; }
-.user { align-self: flex-end; background: #7564d9; color: white; }
+
+.assistant {
+  align-self: flex-start;
+  background: #252b43;
+  border: 1px solid #333b59;
+}
+
+.user {
+  align-self: flex-end;
+  background: #7564d9;
+  color: white;
+}
+
 .label {
   display: block;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  opacity: .75;
+  opacity: .7;
   margin-bottom: 4px;
 }
-form { display: flex; gap: 9px; margin-top: 14px; }
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
 textarea {
   flex: 1;
-  min-width: 0;
   resize: vertical;
   min-height: 52px;
   max-height: 180px;
@@ -91,64 +138,129 @@ textarea {
   border-radius: 15px;
   background: #111629;
   color: var(--text);
-  padding: 13px;
+  padding: 14px;
   font: inherit;
   outline: none;
 }
+
 textarea:focus { border-color: var(--accent); }
+
 button {
   border: 0;
   border-radius: 14px;
-  padding: 0 19px;
+  padding: 0 20px;
   font: 600 15px system-ui;
   background: var(--accent);
   color: #111322;
   cursor: pointer;
 }
+
 button:disabled { opacity: .55; cursor: wait; }
-.status { color: #ffd48a; font-size: 13px; min-height: 20px; margin: 8px 2px 0; }
-.notice { color: var(--muted); font-size: 12px; text-align: center; margin: 12px 0 0; }
-.about { margin-top: 22px; color: var(--muted); font-size: 14px; }
+
+.notice {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  margin: 12px 0 0;
+}
+
+.status {
+  color: #ffd48a;
+  font-size: 13px;
+  min-height: 20px;
+  margin: 8px 2px 0;
+  overflow-wrap: anywhere;
+}
+
+.about {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .about h2 { font-size: 20px; color: var(--text); }
-footer { color: var(--muted); font-size: 12px; text-align: center; padding-top: 20px; }
-@media(max-width:520px) {
-  .wrap { padding: 16px 10px; }
-  .chat { padding: 11px; }
+
+footer {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+@media (max-width: 520px) {
+  .wrap { padding: 18px 10px; }
+  .chat { padding: 12px; }
   form { gap: 7px; }
   button { padding: 0 13px; }
-  .intro { margin: 25px 0 20px; }
+  .intro { margin: 28px 0 22px; }
 }
-</style></head><body>
+</style>
+</head>
+
+<body>
 <main class="wrap">
-  <header>
-    <div class="logo" aria-hidden="true">S</div>
-    <div>
-      <h1>SKI AI</h1>
-      <p class="tagline">Your personal AI assistant</p>
+
+<header>
+  <div class="logo" aria-hidden="true">S</div>
+  <div>
+    <h1>SKI AI</h1>
+    <p class="tagline">Your personal AI assistant</p>
+  </div>
+</header>
+
+<section class="intro">
+  <h2>What can I help you with?</h2>
+  <p>Ask questions. Explore ideas. Learn something new.</p>
+</section>
+
+<section class="chat" aria-label="AI chat">
+  <div id="messages" aria-live="polite">
+    <div class="msg assistant">
+      <span class="label">SKI AI</span>
+      Hello! I'm SKI AI. Ask me a question about learning, science, technology, writing, or ideas.
     </div>
-  </header>  <section class="intro">
-    <h2>What can I help you with?</h2>
-    <p>Ask questions. Explore ideas. Learn something new.</p>
-  </section>  <section class="chat" aria-label="AI chat">
-    <div id="messages" aria-live="polite">
-      <div class="msg assistant">
-        <span class="label">SKI AI</span>
-        Hello! I'm SKI AI. Ask me anything about learning, science, technology, writing, or everyday questions.
-      </div>
-    </div><div id="status" class="status" role="status" aria-live="polite"></div>
+  </div>
 
-<form id="chat-form">
-  <textarea id="prompt" placeholder="Message SKI AI..." aria-label="Your message" required maxlength="4000"></textarea>
-  <button id="send" type="submit">Send</button>
-</form>
+  <div id="status" class="status" role="status"></div>
 
-<p class="notice">AI can make mistakes. Don't share passwords or sensitive personal information.</p>
+  <form id="chat-form">
+    <textarea
+      id="prompt"
+      placeholder="Message SKI AI..."
+      aria-label="Your message"
+      required
+      maxlength="4000"
+    ></textarea>
+    <button id="send" type="submit">Send</button>
+  </form>
 
-  </section>  <section class="about">
-    <h2>About SKI AI</h2>
-    <p>SKI AI is an independent AI assistant project designed to help people learn, explore ideas, and work through everyday questions. Responses are generated by an AI service and may not always be accurate.</p>
-  </section>  <footer>SKI AI is an independent project and is not affiliated with OpenAI, Google, or GitHub.</footer>
-</main><script>
+  <p class="notice">
+    AI can make mistakes. Don't share passwords or sensitive personal information.
+  </p>
+</section>
+
+<section class="about">
+  <h2>About SKI AI</h2>
+  <p>
+    SKI AI is an independent AI assistant project designed to help people
+    learn, explore ideas, and work through everyday questions. Responses
+    are generated by an AI service and may not always be accurate.
+  </p>
+</section>
+
+<footer>
+  SKI AI is an independent project and is not affiliated with OpenAI, Google, or GitHub.
+</footer>
+
+</main>
+
+<script>
+"use strict";
+
+/*
+  SKI AI backend.
+  The API key must remain on the server in Vercel environment variables.
+*/
 const API_URL = "https://skai-swart.vercel.app/api/chat";
 
 const form = document.getElementById("chat-form");
@@ -175,7 +287,7 @@ function addMessage(role, text) {
   el.scrollIntoView({ behavior: "smooth", block: "end" });
 }
 
-form.addEventListener("submit", async function(event) {
+form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const text = input.value.trim();
@@ -191,7 +303,9 @@ form.addEventListener("submit", async function(event) {
   try {
     const response = await fetch(API_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
         messages: history.slice(-12)
       })
@@ -200,13 +314,15 @@ form.addEventListener("submit", async function(event) {
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-      throw new Error(data.error || "Request failed with status " + response.status);
+      throw new Error(
+        data.error || "Request failed. Please check your backend deployment."
+      );
     }
 
     const reply = data.reply || data.answer;
 
     if (typeof reply !== "string" || !reply.trim()) {
-      throw new Error("The backend returned no answer. Check the Vercel backend code.");
+      throw new Error("The backend returned no answer.");
     }
 
     addMessage("assistant", reply);
@@ -214,11 +330,16 @@ form.addEventListener("submit", async function(event) {
     statusBox.textContent = "";
 
   } catch (error) {
-    statusBox.textContent = "Connection error: " + error.message;
+    statusBox.textContent =
+      "Connection error: " +
+      (error.message || "Please try again.");
+
   } finally {
     send.disabled = false;
     input.focus();
   }
 });
-</script></body>
+</script>
+
+</body>
 </html>
